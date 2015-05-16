@@ -86,7 +86,7 @@ public class Operation {
 //Important : les operation en String pour qui'il donne une zonne vide dans le resultat finale si on rencontrer un exeprtion 
     public static String inverse(Matrice A) {
         // A est une matrice carre [ligne=colonne]
-         String CAD = "";
+         String chaine = "";
         if(determinant( A)!=0 && (A.getligne()==A.getcolonne())){
         Integer L = A.getligne();
         float A1[][] = new float[L][L];
@@ -129,23 +129,23 @@ public class Operation {
         for (int i = 0; i <= (L - 1); i++) {
             for (int j = 0; j <= (L - 1); j++) {
 
-                CAD = CAD + C[i][j] + "\t";
+                chaine = chaine + C[i][j] + "\t";
             }
-            CAD = CAD + "\n";
+            chaine = chaine + "\n";
 
         }
         }
         else{
           JOptionPane.showMessageDialog(null, " La matrice n'est pas inversible", "ERREUR", JOptionPane.WARNING_MESSAGE);
             }
-        return CAD;
+        return chaine;
     }
  //transposer
     public static String transposer(Matrice A) {
        // TL: transposer ligne
         //TC:transpose colonne
         int TL, TC;
-        String CAD = "";
+        String chaine = "";
 
         TL = A.getligne();
         TC = A.getcolonne();
@@ -153,12 +153,12 @@ public class Operation {
         for (int j = 0; j <= TC - 1; j++) {
             for (int i = 0; i <= TL - 1; i++) {
 
-                CAD = CAD + A.getValeur(i, j) + "\t";
+                chaine = chaine + A.getValeur(i, j) + "\t";
             }
-            CAD = CAD + "\n";
+            chaine = chaine + "\n";
 
         }
-        return CAD;
+        return chaine;
     }
     //Trace
     public static float trace(Matrice A) {
@@ -176,7 +176,7 @@ public class Operation {
     //triangle superieur
     public static String trianguleSuperieur(Matrice A) {
         int l, c;
-        String CAD = "";
+        String chaine = "";
 
         l = A.getligne();
         c = A.getcolonne();
@@ -185,25 +185,25 @@ public class Operation {
             for (int i = 0; i <= l - 1; i++) {
                 for (int j = 0; j <= c - 1; j++) {
                     if (i <= j) {
-                        CAD = CAD + A.getValeur(i, j) + "\t";
+                        chaine = chaine + A.getValeur(i, j) + "\t";
                     } else {
-                        CAD = CAD + 0 + "\t";
+                        chaine = chaine + 0 + "\t";
                     }
                 }
-                CAD = CAD + "\n";
+                chaine = chaine + "\n";
             }
 
         } else {
             JOptionPane.showMessageDialog(null, " Matrice non carée ", "ERREUR", JOptionPane.WARNING_MESSAGE);
 
         }
-        return CAD;
+        return chaine;
 
     }
     //triangle inferieur 
     public static String trianguleInferieur(Matrice A) {
         int l, c;
-        String CAD = "";
+        String chaine = "";
 
         l = A.getligne();
         c = A.getcolonne();
@@ -211,41 +211,41 @@ public class Operation {
             for (int i = 0; i <= l - 1; i++) {
                 for (int j = 0; j <= c - 1; j++) {
                     if (i >= j) {
-                        CAD = CAD + A.getValeur(i, j) + "\t";
+                        chaine = chaine + A.getValeur(i, j) + "\t";
                     } else {
-                        CAD = CAD + 0 + "\t";
+                        chaine = chaine + 0 + "\t";
                     }
                 }
-                CAD = CAD + "\n";
+                chaine = chaine + "\n";
             }
 
         } else {
             JOptionPane.showMessageDialog(null, " Matrice non carée", "ERREUR", JOptionPane.WARNING_MESSAGE);
         }
-        return CAD;
+        return chaine;
 }
 //Diagonale
     public static String diagonale(Matrice A) {
         int l, c, num;
-        String CAD = "";
+        String chaine = "";
         l = A.getligne();
         c = A.getcolonne();
         if (l == c) {
             for (int i = 0; i <= l - 1; i++) {
                 for (int j = 0; j <= c - 1; j++) {
                     if (i == j) {
-                        CAD = CAD + A.getValeur(i, j) + "\t";
+                        chaine = chaine + A.getValeur(i, j) + "\t";
                     } else {
-                        CAD = CAD + 0 + "\t";
+                        chaine = chaine + 0 + "\t";
                     }
                 }
-                CAD = CAD + "\n";
+                chaine = chaine + "\n";
             }
 
         } else {
             JOptionPane.showMessageDialog(null, " Matrice non carée", "ERREUR", JOptionPane.WARNING_MESSAGE);
         }
-        return CAD;
+        return chaine;
     }
 
  
